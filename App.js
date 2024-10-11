@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TextInput, Alert, FlatList, SafeAreaView, TouchableOpacity, Touchable
+import { StyleSheet, Text, Modal ,View, Button, TextInput, Alert, FlatList, SafeAreaView, TouchableOpacity, Touchable
 } from 'react-native';
 
 const DATA = [
@@ -25,6 +25,9 @@ const DATA = [
 export default function App() {
   const [items, setItems] = useState(DATA);
   const [text,setText] = useState("");
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+
   const addNewTodo = () => {
     let newTodo ={
       id: items.lenght + 1,
@@ -54,10 +57,15 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Modal>  
+        <View style={styles.centeredView}>
+          <View style = {styles.modalView}>
+          <TextInput style={styles.input} onChangeText={setText} value={text} />
+          <Button title='Add Todo' onPress={addNewTodo}/>
+          </View>
+        </View>
+      </Modal>
       <StatusBar style="auto" /> 
-      <TextInput style={styles.input} onChangeText={setText} value={text} />
-      <Button title='Add Todo' onPress={addNewTodo}/>
       <FlatList
       style={styles.list}
       data={items}
@@ -99,5 +107,26 @@ const styles = StyleSheet.create({
   itemTextCompleted:{
     color: '#ffff',
     textDecorationLine: 'line-through'
-  }
+  },
+  centeredView:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
 });
