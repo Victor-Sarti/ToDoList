@@ -37,6 +37,7 @@ export default function App() {
 
      setItems([...items,newTodo]);
      setText("");
+     setIsModalVisible(false);
   }
 
   const markItemCompleted = (item) => {
