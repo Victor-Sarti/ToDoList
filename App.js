@@ -63,7 +63,7 @@ export default function App() {
         <View style={styles.centeredView}>
           <View style = {styles.modalView}>
           <TextInput style={styles.input} onChangeText={setText} value={text} />
-          <Button title='Add Todo' onPress={addNewTodo}/>
+          <Button title='Add Todo' onPress={addNewTodo}  />
           </View>
         </View>
       </Modal>
@@ -86,12 +86,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingTop: 25,
   },
+
   input:{
     height: 40,
     width: 200,
     borderWidth: 1,
     padding: 10,
     borderColor: 'gray',
+    
   },
   list: {
     alignSelf: 'stretch'
@@ -120,6 +122,8 @@ const styles = StyleSheet.create({
   modalView: {
     margin: 20,
     backgroundColor: 'white',
+    display: 'flex',
+    gap: 10,
     borderRadius: 20,
     padding: 35,
     alignItems: 'center',
