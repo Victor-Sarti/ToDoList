@@ -57,7 +57,8 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Modal>  
+      <Button title='add an item' onPress={() => setIsModalVisible(true)}/>
+      <Modal visible ={isModalVisible} transparent={true} onRequestClose={() => setIsModalVisible(!isModalVisible)}>  
         <View style={styles.centeredView}>
           <View style = {styles.modalView}>
           <TextInput style={styles.input} onChangeText={setText} value={text} />
@@ -82,6 +83,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: 25,
   },
   input:{
     height: 40,
@@ -112,7 +114,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 22,
+    marginTop: 45,
   },
   modalView: {
     margin: 20,
