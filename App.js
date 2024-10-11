@@ -58,7 +58,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Button title='add an item' onPress={() => setIsModalVisible(true)}/>
+      <Button title='add  an  item' onPress={() => setIsModalVisible(true)}/>
       <Modal visible ={isModalVisible} transparent={true} onRequestClose={() => setIsModalVisible(!isModalVisible)}>  
         <View style={styles.centeredView}>
           <View style = {styles.modalView}>
