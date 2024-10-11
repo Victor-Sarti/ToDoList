@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     width: 200,
     borderWidth: 1,
     padding: 10,
-    borderColor: 'gray',
+    borderColor: 'black',
     
   },
   list: {
