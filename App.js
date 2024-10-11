@@ -10,16 +10,19 @@ const DATA = [
     id: '1',
     title: 'Meditation',
     completed: false,
+    color: "#EBC58C"
   },
   {
     id: '2',
     title: 'Coding',
     completed: false,
+    color: "#6DB6DD"
   },
   {
     id: '3',
     title: 'Journaling',
     completed: false,
+    color:"#BC96E6"
   }
 
 ]
@@ -34,7 +37,8 @@ export default function App() {
     let newTodo ={
       id: items.lenght + 1,
       title: text,
-      completed: false
+      completed: false,
+      color: "#DF5E5E",
     }
 
      setItems([...items,newTodo]);
@@ -53,7 +57,7 @@ export default function App() {
   }
 
   const TodoItem = (props) => (
-    <TouchableOpacity style={styles.item} onPress={() => markItemCompleted(props.item)} >
+    <TouchableOpacity style={[styles.item, { backgorudColor: props.item.color}]} onPress={() => markItemCompleted(props.item)}>
       <Text style={props.item.completed ? styles.itemTextCompleted :  styles.itemText} >{props.item.title}</Text>
     </TouchableOpacity>
   )
