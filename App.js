@@ -2,6 +2,7 @@ import {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, Modal ,View, Button, TextInput, Alert, FlatList, SafeAreaView, TouchableOpacity, Touchable
 } from 'react-native';
+import {Ionicons} from '@expo/vector-icons';
 
 const DATA = [
   {
@@ -58,7 +59,11 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Button title='add  an  item' onPress={() => setIsModalVisible(true)}/>
+      <TouchableOpacity onPress={() => setIsModalVisible(true)}>
+        <View style={styles.icon}>
+        <Ionicons name="add" size={24} color="#652E00"/>
+        </View>
+        </TouchableOpacity>
       <Modal visible ={isModalVisible} transparent={true} onRequestClose={() => setIsModalVisible(!isModalVisible)}>  
         <View style={styles.centeredView}>
           <View style = {styles.modalView}>
@@ -136,4 +141,21 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
+  icon:{
+    backgroundColor: "white",
+    borderRadius: 100,
+    padding: 10,
+    margin: 5,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  }
 });
