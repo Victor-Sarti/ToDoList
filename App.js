@@ -36,7 +36,7 @@ export default function App() {
 
   const addNewTodo = () => {
     let newTodo ={
-      id: items.lenght + 1,
+      id: (items.lenght + 1).toString(),
       title: text,
       completed: false,
       color: "#DF5E5E",
