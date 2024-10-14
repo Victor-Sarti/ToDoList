@@ -28,6 +28,7 @@ export const styles = StyleSheet.create({
       marginHorizontal: 16,
       borderRadius: 10,
       
+      
     },
     itemText: {
       color:'#ffff',
@@ -74,7 +75,8 @@ export const styles = StyleSheet.create({
       elevation: 5,
       display: "flex",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
+      alignSelf: 'center'
     }
   });
   

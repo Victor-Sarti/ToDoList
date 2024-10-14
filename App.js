@@ -20,7 +20,7 @@ const DATA = [
   },
   {
     id: '3',
-    title: 'Journaling',
+    title: 'Read a book',
     completed: false,
     color:"#BC96E6",
   }
@@ -31,6 +31,7 @@ export default function App() {
   const [items, setItems] = useState(DATA);
   const [text,setText] = useState("");
   const [isModalVisible, setIsModalVisible] = useState(false);
+  
 
 
   const addNewTodo = () => {
@@ -62,13 +63,20 @@ export default function App() {
     </TouchableOpacity>
   )
 
+  const renderAddButton = () => {
+    return(
+      <TouchableOpacity onPress={() => setIsModalVisible(true)}>
+      <View style={styles.icon}>
+      <Ionicons name="add" size={24} color="#652E00"/>
+      </View>
+      </TouchableOpacity>
+    )
+  }
+
+
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity onPress={() => setIsModalVisible(true)}>
-        <View style={styles.icon}>
-        <Ionicons name="add" size={24} color="#652E00"/>
-        </View>
-        </TouchableOpacity>
+    
       <Modal visible ={isModalVisible} transparent={true} onRequestClose={() => setIsModalVisible(!isModalVisible)}>  
         <View style={styles.centeredView}>
           <View style = {styles.modalView}>
@@ -83,6 +91,8 @@ export default function App() {
       data={items}
       renderItem={({item}) => <TodoItem item={item} />}
       keyExtractor={item => item.id}
+      ListFooterComponent={renderAddButton}
+  
       />
     </SafeAreaView>
   );
