@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
       color:'#ffff',
     },
     itemTextCompleted:{
-      color: '#ffff',
+      color: '#000',
       textDecorationLine: 'line-through'
     },
     centeredView:{
