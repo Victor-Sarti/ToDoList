@@ -8,22 +8,11 @@ import {styles} from "./App.style";
 const DATA = [
   {
     id: '1',
-    title: 'Meditation',
+    title: 'Take a shower',
     completed: false,
     color: "#EBC58C",
   },
-  {
-    id: '2',
-    title: 'Coding',
-    completed: false,
-    color: "#6DB6DD",
-  },
-  {
-    id: '3',
-    title: 'Read a book',
-    completed: false,
-    color:"#BC96E6",
-  }
+
 
 ]
 
