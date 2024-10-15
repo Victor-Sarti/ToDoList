@@ -39,7 +39,7 @@ export default function App() {
   const addNewTodo = () => {
     let colorIndex = items.length % COLORS.length;
     let newTodo ={
-      id: (items.lenght + 1).toString(),
+      id: Date.now().toString(),
       title: text,
       completed: false,
       color: COLORS[colorIndex]
