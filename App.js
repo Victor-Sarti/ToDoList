@@ -33,13 +33,16 @@ export default function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   
 
+  const COLORS = ["#EBC58C", "#6DB6DD", "#BC96E6", "#DF5E5E", "#FFC300","#EBC58C", "#6DB6DD", "#BC96E6", "#DF5E5E", "#FFC300"];
+
 
   const addNewTodo = () => {
+    let colorIndex = items.length % COLORS.length;
     let newTodo ={
       id: (items.lenght + 1).toString(),
       title: text,
       completed: false,
-      color: "#DF5E5E",
+      color: COLORS[colorIndex]
     }
 
      setItems([...items,newTodo]);
