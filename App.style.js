@@ -22,6 +22,7 @@ export const styles = StyleSheet.create({
       alignSelf: 'stretch'
     },
     item:{
+      gap: 15,
       backgroundColor: '#6db6dd',
       padding: 20,
       marginVertical: 8,
