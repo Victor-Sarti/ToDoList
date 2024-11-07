@@ -7,7 +7,7 @@ import { styles } from "./App.style";
 const DATA = [
   {
     id: '1',
-    title: 'Take a shower',
+    title: 'add one task ',
     completed: false,
     color: "#EBC58C",
   },
